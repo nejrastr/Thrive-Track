@@ -16,6 +16,8 @@ function App() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
+  console.log("test");
+
   const login = React.useCallback(() => {
     setIsLoggedIn(true);
   }, []);
