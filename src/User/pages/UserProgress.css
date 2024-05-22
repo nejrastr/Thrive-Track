@@ -1,0 +1,18 @@
+.progress {
+  padding: 20px;
+  margin: 6rem auto;
+  max-width: 60%;
+}
+
+.progress-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.progress-goal {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
