@@ -6,15 +6,21 @@ import Button from "../../Shared/FormElements/components/Button";
 import { useState } from "react";
 import { VALIDATOR_REQUIRE } from "../../Shared/utils/validators";
 import NewTask from "../components/NewTask";
-const UserGoals = () => {
+import UserProgress from "./UserProgress";
+import { useNavigate } from "react-router-dom";
+const UserGoals = ({ addGoal, showTask }) => {
   const [addTask, setAddTask] = useState(false);
 
+  const nav = useNavigate();
   const onAddGoalHandler = (event) => {
     event.preventDefault();
+    addGoal({ goalName, startDate, endDate });
     alert("Sucesfully created goal.");
+    nav("/u1/progress");
   };
   const addTaskHandler = (event) => {
     event.preventDefault();
+
     setAddTask(true);
   };
   const [goalName, setGoalName] = useState("");
@@ -56,7 +62,7 @@ const UserGoals = () => {
 
         <Button onClick={addTaskHandler}>Add task</Button>
       </form>
-      {addTask && <NewTask />}
+      {addTask && <NewTask showTask={showTask} />}
       <Button onClick={onAddGoalHandler}>Add goal </Button>
     </Card>
   );
